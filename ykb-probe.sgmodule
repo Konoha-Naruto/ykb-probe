@@ -1,9 +1,9 @@
 #!name=医考帮 探针
-#!desc=只抓 playauth 与 VIP 回包，不改数据
+#!desc=抓 api.yikaobang.com.cn 的真实回包，只读不改
 #!system=ios
 
 [Script]
-ykb-probe = type=http-response,pattern=^https?:\/\/(ykb-app-service|ykb-exam-api|api)\.yikaobang\.com\.cn\/(player|user\/main\/vip|base\/product|appapi\/reward),requires-body=1,max-size=0,script-path=ykb_probe.js,timeout=30
+ykb-probe = type=http-response,pattern=^https?://api\.yikaobang\.com\.cn/index\.php/,requires-body=1,max-size=262144,script-path=ykb_probe.js,timeout=30
 
 [MITM]
-hostname = %APPEND% ykb-app-service.yikaobang.com.cn, ykb-exam-api.yikaobang.com.cn, api.yikaobang.com.cn
+hostname = %APPEND% api.yikaobang.com.cn, *.yikaobang.com.cn
