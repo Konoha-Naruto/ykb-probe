@@ -1,9 +1,9 @@
 #!name=医考帮 探针
-#!desc=抓 api.yikaobang.com.cn 的真实回包，只读不改
+#!desc=抓 api.yikaobang.com.cn 真实回包，只读不改
 #!system=ios
 
 [Script]
-ykb-probe = type=http-response,pattern=^https?://api\.yikaobang\.com\.cn/index\.php/,requires-body=1,max-size=262144,script-path=ykb_probe.js,timeout=30
+ykb-probe = type=http-response,pattern=^https?://api\.yikaobang\.com\.cn/index\.php/,requires-body=1,max-size=262144,script-path=https://raw.githubusercontent.com/Konoha-Naruto/ykb-probe/main/ykb_probe.js?v=3,timeout=30
 
 [MITM]
 hostname = %APPEND% api.yikaobang.com.cn, *.yikaobang.com.cn
