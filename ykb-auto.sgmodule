@@ -1,0 +1,9 @@
+#!name=医考帮 全套
+#!desc=抓包 + VIP 状态改包（只改客户端显示，不动服务器数据）
+#!system=ios
+
+[Script]
+ykb-auto = type=http-response,pattern=^https?://[^/]*yikaobang\.com\.cn/,requires-body=1,max-size=1048576,script-path=ykb_auto.js,timeout=30
+
+[MITM]
+hostname = %APPEND% *.yikaobang.com.cn
